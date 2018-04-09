@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
-<head>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich = "http://richfaces.org/rich">
+<h:head>
 	<title>Simple CRUD</title>
-</head>
+</h:head>
 
-<body>
+<h:body>
 	<h3>List students</h3>
 	<h:form rendered="#{not empty simpleCrudBean.list}">
-		<h:dataTable value="#{simpleCrudBean.list}" var="item">
-			<h:column><f:facet name="header">ID</f:facet>#{item.id}</h:column>
-			<h:column><f:facet name="header">Name</f:facet>#{item.name}</h:column>
-			<h:column><f:facet name="header">Age</f:facet>#{item.age}</h:column>
+		<rich:dataTable value="#{simpleCrudBean.list}" var="item">
+			<rich:column><f:facet name="header">ID</f:facet>#{item.id}</rich:column>
+			<rich:column sortBy="#{item.name}"><f:facet name="header">Name</f:facet>#{item.name}</rich:column>
+			<rich:column sortBy="#{item.age}"><f:facet name="header">Age</f:facet>#{item.age}</rich:column>
 			<h:column>
 				<h:commandButton value="edit" action="#{simpleCrudBean.edit(item)}" />
 			</h:column>
 			<h:column>
 				<h:commandButton value="delete" action="#{simpleCrudBean.delete(item)}" />
 			</h:column>
-		</h:dataTable>
+		</rich:dataTable>
 	</h:form>
 
 	<h:panelGroup rendered="#{empty simpleCrudBean.list}">
@@ -52,5 +53,5 @@
 	<p>
 		<a href="#{appUrlStore.baseUrl}">Go back to index</a>
 	</p>
-</body>
+</h:body>
 </html>

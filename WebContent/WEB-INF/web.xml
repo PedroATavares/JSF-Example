@@ -31,6 +31,11 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 	
+	<context-param>
+    	<param-name>org.richfaces.skin</param-name>
+    	<param-value>ruby</param-value>
+	</context-param>
+	
 	<session-config>
 		<session-timeout>20</session-timeout>
 		<tracking-mode>COOKIE</tracking-mode>

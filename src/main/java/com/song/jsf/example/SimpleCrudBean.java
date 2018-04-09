@@ -9,6 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.richfaces.component.SortOrder;
+
 @ManagedBean
 @SessionScoped
 public class SimpleCrudBean implements Serializable {
@@ -18,7 +20,7 @@ public class SimpleCrudBean implements Serializable {
     private Student item = new Student();
     private Student beforeEditItem = null;
     private boolean edit;
-
+    
     @PostConstruct
     public void init() {
         list = new ArrayList<Student>();
@@ -65,7 +67,7 @@ public class SimpleCrudBean implements Serializable {
     public Student getItem() {
         return this.item;
     }
-
+    
     public boolean isEdit() {
         return this.edit;
     }
