@@ -39,8 +39,11 @@
 			</p>
 			<p>
 				<h:commandButton value="add" action="#{simpleCrudBean.add}" />
-				<h:commandButton value="reset" action="#{simpleCrudBean.resetAdd}" />
 			</p>
+		</h:form>
+		<h:form>
+			<h:commandButton value="reset" action="#{simpleCrudBean.resetAdd}" />
+			<h:commandButton value="update" action="#{simpleCrudBean.update}" />
 		</h:form>
 	</h:panelGroup>
 	
