@@ -9,8 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import org.richfaces.component.SortOrder;
 
+@SuppressWarnings("deprecation")
 @ManagedBean
 @SessionScoped
 public class SimpleCrudBean implements Serializable {

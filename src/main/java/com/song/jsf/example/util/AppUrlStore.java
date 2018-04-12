@@ -16,18 +16,18 @@ public class AppUrlStore implements Serializable {
 	private String baseUrl = null;
 	private String simpleCrudUrl = null;
 	private String freshSafeCrudUrl = null;
+	private String entryPoint = null;
 
 	public String getBaseUrl() {return baseUrl; }
 	public String getSimpleCrudUrl() { return simpleCrudUrl; }
 	public String getFreshSafeCrudUrl() {return freshSafeCrudUrl; }
-
+	public String getEntryPoint() {return entryPoint; }
 	@PostConstruct
     public void init() {
-		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-		String baseUrl = externalContext.getInitParameter("BaseUrl");
+		String baseUrl = "http://localhost:8080/";
 
 		this.baseUrl = baseUrl;
 		this.simpleCrudUrl = baseUrl + "simplecrud.xhtml";
 		this.freshSafeCrudUrl = baseUrl + "freshsafecrud.xhtml";
-    }
+		this.entryPoint = baseUrl + "welcome.xhtml";    }
 }

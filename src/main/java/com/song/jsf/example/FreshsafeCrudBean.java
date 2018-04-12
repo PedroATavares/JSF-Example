@@ -10,8 +10,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
+
 import com.song.jsf.example.util.CommonUtils;
 
+@SuppressWarnings("deprecation")
 @ManagedBean
 @SessionScoped
 public class FreshsafeCrudBean implements Serializable {
