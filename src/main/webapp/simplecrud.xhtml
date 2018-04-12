@@ -14,6 +14,7 @@
 			<rich:column><f:facet name="header">ID</f:facet>#{item.id}</rich:column>
 			<rich:column sortBy="#{item.name}"><f:facet name="header">Name</f:facet>#{item.name}</rich:column>
 			<rich:column sortBy="#{item.age}"><f:facet name="header">Age</f:facet>#{item.age}</rich:column>
+			<rich:column><f:facet name="header">Education Level</f:facet>#{item.educationLevel}</rich:column>
 			<h:column>
 				<h:commandButton value="edit" action="#{simpleCrudBean.edit(item)}" />
 			</h:column>
@@ -31,7 +32,11 @@
 		<h3>Add student</h3>
 		<h:form>
 			<p>Name: <h:inputText value="#{simpleCrudBean.item.name}" /></p>
-			<p>Age: <h:inputText value="#{simpleCrudBean.item.age}" /></p>
+			<p>Age: 
+				<h:inputText value="#{simpleCrudBean.item.age}">
+					<f:validateLongRange minimum = "13"/>
+				</h:inputText>
+			</p>
 			<p>
 				<h:commandButton value="add" action="#{simpleCrudBean.add}" />
 				<h:commandButton value="reset" action="#{simpleCrudBean.resetAdd}" />
@@ -43,7 +48,11 @@
 		<h3>Edit student #{simpleCrudBean.item.id}</h3>
 		<h:form>
 			<p>Name: <h:inputText value="#{simpleCrudBean.item.name}" /></p>
-			<p>Age: <h:inputText value="#{simpleCrudBean.item.age}" /></p>
+			<p>Age: 
+				<h:inputText value="#{simpleCrudBean.item.age}">
+					<f:validateLongRange minimum = "13"/>
+				</h:inputText>
+			</p>
 			<p>
 				<h:commandButton value="save" action="#{simpleCrudBean.saveEdit}" />
 				<h:commandButton value="cancel" action="#{simpleCrudBean.cancelEdit}" />
